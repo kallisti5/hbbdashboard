@@ -24,8 +24,8 @@
  */
 
 var settings = new Settings;
-var buildbots = [ new WebKitBuildbot ];
-var webkitTrac = new Trac("https://trac.webkit.org/");
+var buildbots = [ new HaikuBuildbot ];
+var webkitTrac = new Trac("https://dev.haiku-os.org/");
 if (typeof Bugzilla !== "undefined")
     var bugzilla = new Bugzilla;
 if (typeof BubbleQueueServer !== "undefined")
