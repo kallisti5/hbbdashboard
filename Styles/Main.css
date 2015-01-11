@@ -147,7 +147,7 @@ table.queue-grid td.logo::before {
 }
 
 table.queue-grid td.logo img.ring {
-    content: -webkit-image-set(url(../Images/PlatformRing@2x.png) 2x, url(../Images/PlatformRing.png) 1x);
+    background-image: url(../Images/PlatformRing.png);
     width: 160px;
     height: 163px;
     position: absolute;
@@ -165,23 +165,23 @@ table.queue-grid td.logo img.logo {
 }
 
 table.queue-grid tr.platform.x86_64 img.logo {
-    content: -webkit-image-set(url(../Images/x86_64@2x.png) 2x, url(../Images/x86_64.png) 1x);
+    background-image: url("../Images/x86_64.png");
 }
 
 table.queue-grid tr.platform.x86 img.logo {
-    content: -webkit-image-set(url(../Images/x86@2x.png) 2x, url(../Images/x86.png) 1x);
+    background-image: url("../Images/x86.png");
 }
 
 table.queue-grid tr.platform.x86_gcc2 img.logo {
-    content: -webkit-image-set(url(../Images/x86_gcc2@2x.png) 2x, url(../Images/x86_gcc2.png) 1x);
+    background-image: url("../Images/x86_gcc2.png");
 }
 
 table.queue-grid tr.platform.arm img.logo {
-    content: -webkit-image-set(url(../Images/arm@2x.png) 2x, url(../Images/arm.png) 1x);
+    background-image: url("../Images/arm.png");
 }
 
 table.queue-grid tr.platform.ppc img.logo {
-    content: -webkit-image-set(url(../Images/ppc@2x.png) 2x, url(../Images/ppc.png) 1x);
+    background-image: url("../Images/ppc.png");
 }
 
 .popover-tracking:hover {
