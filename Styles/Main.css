@@ -147,6 +147,7 @@ table.queue-grid td.logo::before {
 }
 
 table.queue-grid td.logo img.ring {
+    content: url(../Images/PlatformRing.png);
     background-image: url(../Images/PlatformRing.png);
     width: 160px;
     height: 163px;
@@ -165,22 +166,27 @@ table.queue-grid td.logo img.logo {
 }
 
 table.queue-grid tr.platform.x86_64 img.logo {
+    content: url("../Images/x86_64.png");
     background-image: url("../Images/x86_64.png");
 }
 
 table.queue-grid tr.platform.x86 img.logo {
+    content: url("../Images/x86.png");
     background-image: url("../Images/x86.png");
 }
 
 table.queue-grid tr.platform.x86_gcc2 img.logo {
+    content: url("../Images/x86_gcc2.png");
     background-image: url("../Images/x86_gcc2.png");
 }
 
 table.queue-grid tr.platform.arm img.logo {
+    content: url("../Images/arm.png");
     background-image: url("../Images/arm.png");
 }
 
 table.queue-grid tr.platform.ppc img.logo {
+    content: url("../Images/ppc.png");
     background-image: url("../Images/ppc.png");
 }
 
