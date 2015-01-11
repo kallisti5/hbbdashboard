@@ -25,8 +25,9 @@
 
 Dashboard = {
     Platform: {
-        Linux64: { name: "x86_64", readableName: "Linux 32-bit", order: 10 },
-        Linux32: { name: "x86", readableName: "Linux 64-bit", order: 20 },
+        x86_gcc2: { name: "x86_gcc2", readableName: "x86_gcc2", order: 10 },
+        x86_64: { name: "x86_64", readableName: "x86_64", order: 20 },
+        x86: { name: "x86", readableName: "x86", order: 30 }
     },
     Branch: {}
 };

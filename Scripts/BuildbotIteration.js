@@ -67,21 +67,9 @@ BuildbotIteration.EXCEPTION = 4;
 BuildbotIteration.RETRY = 5;
 
 // If none of these steps ran, then we didn't get any real results, and the iteration was not productive.
+// TODO: Use these?
 BuildbotIteration.ProductiveSteps = {
-    "compile-webkit": 1,
-    "build archive": 1,
-    "Build" : 1,
-    "layout-test": 1,
-    "jscore-test": 1,
-    "run-api-tests": 1,
-    "API tests": 1,
-    "webkitpy-test": 1,
-    "webkitperl-test": 1,
-    "bindings-generation-tests": 1,
-    "run Membuster OS Memory": 1,
-    "run scrollperf": 1,
-    "run PLT3": 1,
-    "perf-test": 1
+    "Checkout Haiku": 1,
 };
 
 BuildbotIteration.Event = {

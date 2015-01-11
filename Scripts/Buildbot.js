@@ -57,15 +57,17 @@ Buildbot.UpdateReason = {
 
 // Ordered importance.
 Buildbot.TestCategory = {
-    WebKit2: "webkit-2",
-    WebKit1: "webkit-1"
+    Basic: "Be API Test",
+    Advanced: "Haiku API Test",
 };
 
 // Ordered importance.
 Buildbot.BuildArchitecture = {
-    x86: "x86",
-    x86_64: "x86_64",
-    x86_gcc2: "x86_gcc2"
+    x86_gcc2Target: "x86_gcc2",
+    x86_64Target: "x86_64",
+    x86Target: "x86",
+    ppcTarget: "ppc",
+    armTarget: "arm"
 };
 
 Buildbot.prototype = {

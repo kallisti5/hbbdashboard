@@ -32,13 +32,13 @@ BuildbotBuilderQueueView = function(debugQueues, releaseQueues)
         return queue.architecture === architecture;
     }
 
-    this.x86_64ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64));
-    this.x86ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86));
-    this.x86_gcc2ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2));
+    this.x86_64ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64Target));
+    this.x86ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86Target));
+    this.x86_gcc2ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2Target));
 
-    this.x86_64DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64));
-    this.x86DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86));
-    this.x86_gcc2DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2));
+    this.x86_64DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64Target));
+    this.x86DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86Target));
+    this.x86_gcc2DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2Target));
 
     this.hasMultipleReleaseBuilds = this.releaseQueues.length > 1;
     this.hasMultipleDebugBuilds = this.debugQueues.length > 1;

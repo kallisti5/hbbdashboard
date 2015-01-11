@@ -84,8 +84,8 @@ if (hasBubbles) {
 }
 
 var testNames = {};
-testNames[Buildbot.TestCategory.WebKit2] = "WK2 Tests";
-testNames[Buildbot.TestCategory.WebKit1] = "WK1 Tests";
+testNames[Buildbot.TestCategory.Basic] = "Be API Tests";
+testNames[Buildbot.TestCategory.Advanced] = "Haiku API Tests";
 
 function sortedPlatforms()
 {

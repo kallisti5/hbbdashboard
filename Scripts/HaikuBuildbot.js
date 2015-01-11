@@ -26,9 +26,9 @@
 HaikuBuildbot = function()
 {
     const queueInfo = {
-        "haiku-master-x86_64": {platform: Dashboard.Platform.Linux64, builder: true, architecture: Buildbot.BuildArchitecture.x86_64},
-        "haiku-master-x86": {platform: Dashboard.Platform.Linux64, builder: true, architecture: Buildbot.BuildArchitecture.x86},
-        "haiku-master-x86_gcc2": {platform: Dashboard.Platform.Linux64, builder: true, architecture: Buildbot.BuildArchitecture.x86_gcc2}
+        "haiku-master-x86_gcc2": {platform: Dashboard.Platform.x86_gcc2, builder: true, architecture: Buildbot.BuildArchitecture.x86_gcc2Target},
+        "haiku-master-x86_64": {platform: Dashboard.Platform.x86_64, builder: true, architecture: Buildbot.BuildArchitecture.x86_64Target},
+        "haiku-master-x86": {platform: Dashboard.Platform.x86, builder: true, architecture: Buildbot.BuildArchitecture.x86Target},
     };
 
     Buildbot.call(this, "https://buildbot.haiku-os.org/", queueInfo);
