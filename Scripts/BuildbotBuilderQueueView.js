@@ -32,13 +32,13 @@ BuildbotBuilderQueueView = function(debugQueues, releaseQueues)
         return queue.architecture === architecture;
     }
 
-    this.universalReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.Universal));
-    this.sixtyFourBitReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.SixtyFourBit));
-    this.thirtyTwoBitReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.ThirtyTwoBit));
+    this.x86_64ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64));
+    this.x86ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86));
+    this.x86_gcc2ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2));
 
-    this.universalDebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.Universal));
-    this.sixtyFourBitDebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.SixtyFourBit));
-    this.thirtyTwoBitDebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.ThirtyTwoBit));
+    this.x86_64DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64));
+    this.x86DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86));
+    this.x86_gcc2DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2));
 
     this.hasMultipleReleaseBuilds = this.releaseQueues.length > 1;
     this.hasMultipleDebugBuilds = this.debugQueues.length > 1;
@@ -127,13 +127,13 @@ BuildbotBuilderQueueView.prototype = {
             }.bind(this));
         }
 
-        appendBuildArchitecture.call(this, this.universalReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (Universal)" : "Release");
-        appendBuildArchitecture.call(this, this.sixtyFourBitReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (64-bit)" : "Release");
-        appendBuildArchitecture.call(this, this.thirtyTwoBitReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (32-bit)" : "Release");
+        appendBuildArchitecture.call(this, this.x86_64ReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86_64)" : "Release");
+        appendBuildArchitecture.call(this, this.x86ReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86)" : "Release");
+        appendBuildArchitecture.call(this, this.x86_gcc2ReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86_gcc2)" : "Release");
 
-        appendBuildArchitecture.call(this, this.universalDebugQueues, this.hasMultipleDebugBuilds ? "Debug (Universal)" : "Debug");
-        appendBuildArchitecture.call(this, this.sixtyFourBitDebugQueues, this.hasMultipleDebugBuilds ? "Debug (64-bit)" : "Debug");
-        appendBuildArchitecture.call(this, this.thirtyTwoBitDebugQueues, this.hasMultipleDebugBuilds ? "Debug (32-bit)" : "Debug");
+        appendBuildArchitecture.call(this, this.x86_64DebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86_64)" : "Debug");
+        appendBuildArchitecture.call(this, this.x86DebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86)" : "Debug");
+        appendBuildArchitecture.call(this, this.x86_gcc2DebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86_gcc2)" : "Debug");
     },
 
     _presentPopoverFailureLogs: function(element, popover, iteration)

@@ -164,40 +164,24 @@ table.queue-grid td.logo img.logo {
     left: 26px;
 }
 
-table.queue-grid tr.platform.mac-os-x-yosemite img.logo {
-    content: -webkit-image-set(url(../Images/Yosemite@2x.png) 2x, url(../Images/Yosemite.png) 1x);
+table.queue-grid tr.platform.x86_64 img.logo {
+    content: -webkit-image-set(url(../Images/x86_64@2x.png) 2x, url(../Images/x86_64.png) 1x);
 }
 
-table.queue-grid tr.platform.mac-os-x-mavericks img.logo {
-    content: -webkit-image-set(url(../Images/Mavericks@2x.png) 2x, url(../Images/Mavericks.png) 1x);
+table.queue-grid tr.platform.x86 img.logo {
+    content: -webkit-image-set(url(../Images/x86@2x.png) 2x, url(../Images/x86.png) 1x);
 }
 
-table.queue-grid tr.platform.mac-os-x-mountain-lion img.logo {
-    content: -webkit-image-set(url(../Images/MountainLion@2x.png) 2x, url(../Images/MountainLion.png) 1x);
+table.queue-grid tr.platform.x86_gcc2 img.logo {
+    content: -webkit-image-set(url(../Images/x86_gcc2@2x.png) 2x, url(../Images/x86_gcc2.png) 1x);
 }
 
-table.queue-grid tr.platform.mac-os-x-lion img.logo {
-    content: -webkit-image-set(url(../Images/Lion@2x.png) 2x, url(../Images/Lion.png) 1x);
+table.queue-grid tr.platform.arm img.logo {
+    content: -webkit-image-set(url(../Images/arm@2x.png) 2x, url(../Images/arm.png) 1x);
 }
 
-table.queue-grid tr.platform.windows-8 img.logo {
-    content: -webkit-image-set(url(../Images/Windows8@2x.png) 2x, url(../Images/Windows8.png) 1x);
-}
-
-table.queue-grid tr.platform.windows-7 img.logo {
-    content: -webkit-image-set(url(../Images/Windows7@2x.png) 2x, url(../Images/Windows7.png) 1x);
-}
-
-table.queue-grid tr.platform.windows-xp img.logo {
-    content: -webkit-image-set(url(../Images/WindowsXP@2x.png) 2x, url(../Images/WindowsXP.png) 1x);
-}
-
-table.queue-grid tr.platform.linux-gtk img.logo {
-    content: -webkit-image-set(url(../Images/GTK@2x.png) 2x, url(../Images/GTK.png) 1x);
-}
-
-table.queue-grid tr.platform.linux-efl img.logo {
-    content: -webkit-image-set(url(../Images/EFL@2x.png) 2x, url(../Images/EFL.png) 1x);
+table.queue-grid tr.platform.ppc img.logo {
+    content: -webkit-image-set(url(../Images/ppc@2x.png) 2x, url(../Images/ppc.png) 1x);
 }
 
 .popover-tracking:hover {

@@ -63,9 +63,9 @@ Buildbot.TestCategory = {
 
 // Ordered importance.
 Buildbot.BuildArchitecture = {
-    Universal: "universal",
-    SixtyFourBit: "sixty-four-bit",
-    ThirtyTwoBit: "thirty-two-bit"
+    x86: "x86",
+    x86_64: "x86_64",
+    x86_gcc2: "x86_gcc2"
 };
 
 Buildbot.prototype = {

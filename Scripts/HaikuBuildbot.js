@@ -26,39 +26,9 @@
 HaikuBuildbot = function()
 {
     const queueInfo = {
-        "Apple MountainLion Release (Build)": {platform: Dashboard.Platform.MacOSXMountainLion, builder: true, architecture: Buildbot.BuildArchitecture.SixtyFourBit},
-        "Apple MountainLion Release (32-bit Build)": {platform: Dashboard.Platform.MacOSXMountainLion, builder: true, architecture: Buildbot.BuildArchitecture.ThirtyTwoBit},
-        "Apple MountainLion Debug (Build)": {platform: Dashboard.Platform.MacOSXMountainLion, debug: true, builder: true, architecture: Buildbot.BuildArchitecture.SixtyFourBit},
-        "Apple MountainLion Release WK1 (Tests)": {platform: Dashboard.Platform.MacOSXMountainLion, tester: true, testCategory: Buildbot.TestCategory.WebKit1},
-        "Apple MountainLion Debug WK1 (Tests)": {platform: Dashboard.Platform.MacOSXMountainLion, debug: true, tester: true, testCategory: Buildbot.TestCategory.WebKit1},
-        "Apple MountainLion Release WK2 (Tests)": {platform: Dashboard.Platform.MacOSXMountainLion, tester: true, testCategory: Buildbot.TestCategory.WebKit2},
-        "Apple MountainLion Debug WK2 (Tests)": {platform: Dashboard.Platform.MacOSXMountainLion, debug: true, tester: true, testCategory: Buildbot.TestCategory.WebKit2},
-        //"Apple MountainLion Release (Perf)": {platform: Dashboard.Platform.MacOSXMountainLion, debug: false, performance: true},
-        "Apple Mavericks Debug (Build)": {platform: Dashboard.Platform.MacOSXMavericks, debug: true, builder: true, architecture: Buildbot.BuildArchitecture.SixtyFourBit},
-        "Apple Mavericks Release (Build)": {platform: Dashboard.Platform.MacOSXMavericks, debug: false, builder: true, architecture: Buildbot.BuildArchitecture.SixtyFourBit},
-        "Apple Mavericks Debug WK1 (Tests)": {platform: Dashboard.Platform.MacOSXMavericks, debug: true, tester: true, testCategory: Buildbot.TestCategory.WebKit1},
-        "Apple Mavericks Debug WK2 (Tests)": {platform: Dashboard.Platform.MacOSXMavericks, debug: true, tester: true, testCategory: Buildbot.TestCategory.WebKit2},
-        "Apple Mavericks Release WK1 (Tests)": {platform: Dashboard.Platform.MacOSXMavericks, debug: false, tester: true, testCategory: Buildbot.TestCategory.WebKit1},
-        "Apple Mavericks Release WK2 (Tests)": {platform: Dashboard.Platform.MacOSXMavericks, debug: false, tester: true, testCategory: Buildbot.TestCategory.WebKit2},
-        //"Apple Mavericks Release (Perf)": {platform: Dashboard.Platform.MacOSXMavericks, debug: false, performance: true},
-        "Apple Yosemite Debug (Build)": {platform: Dashboard.Platform.MacOSXYosemite, debug: true, builder: true, architecture: Buildbot.BuildArchitecture.SixtyFourBit},
-        "Apple Yosemite Release (Build)": {platform: Dashboard.Platform.MacOSXYosemite, debug: false, builder: true, architecture: Buildbot.BuildArchitecture.SixtyFourBit},
-        "Apple Yosemite Debug WK1 (Tests)": {platform: Dashboard.Platform.MacOSXYosemite, debug: true, tester: true, testCategory: Buildbot.TestCategory.WebKit1},
-        "Apple Yosemite Debug WK2 (Tests)": {platform: Dashboard.Platform.MacOSXYosemite, debug: true, tester: true, testCategory: Buildbot.TestCategory.WebKit2},
-        "Apple Yosemite Release WK1 (Tests)": {platform: Dashboard.Platform.MacOSXYosemite, debug: false, tester: true, testCategory: Buildbot.TestCategory.WebKit1},
-        "Apple Yosemite Release WK2 (Tests)": {platform: Dashboard.Platform.MacOSXYosemite, debug: false, tester: true, testCategory: Buildbot.TestCategory.WebKit2},
-        //"Apple Yosemite Release (Perf)": {platform: Dashboard.Platform.MacOSXYosemite, debug: false, performance: true},
-        "Apple Win Debug (Build)": {platform: Dashboard.Platform.Windows7, debug: true, builder: true, architecture: Buildbot.BuildArchitecture.ThirtyTwoBit},
-        "Apple Win Release (Build)": {platform: Dashboard.Platform.Windows7, builder: true, architecture: Buildbot.BuildArchitecture.ThirtyTwoBit},
-        "Apple Win 7 Debug (Tests)": {platform: Dashboard.Platform.Windows7, debug: true, tester: true, testCategory: Buildbot.TestCategory.WebKit1},
-        "Apple Win 7 Release (Tests)": {platform: Dashboard.Platform.Windows7, tester: true, testCategory: Buildbot.TestCategory.WebKit1},
-        "GTK Linux 64-bit Release (Build)": {platform: Dashboard.Platform.LinuxGTK, debug: false, builder: true, architecture: Buildbot.BuildArchitecture.SixtyFourBit},
-        "GTK Linux 64-bit Release (Tests)": {platform: Dashboard.Platform.LinuxGTK, debug: false, tester: true, testCategory: Buildbot.TestCategory.WebKit2},
-        "GTK Linux 64-bit Debug (Build)": {platform: Dashboard.Platform.LinuxGTK, debug: true, builder: true, architecture: Buildbot.BuildArchitecture.SixtyFourBit},
-        "GTK Linux 64-bit Debug (Tests)": {platform: Dashboard.Platform.LinuxGTK, debug: true, tester: true, testCategory: Buildbot.TestCategory.WebKit2},
-        //"GTK Linux 64-bit Release (Perf)": {platform: Dashboard.Platform.LinuxGTK, debug: false, performance: true},
-        "EFL Linux 64-bit Release WK2": {platform: Dashboard.Platform.LinuxEFL, tester: true, testCategory: Buildbot.TestCategory.WebKit2},
-        //"EFL Linux 64-bit Release WK2 (Perf)": {platform: Dashboard.Platform.LinuxEFL, performance: true}
+        "haiku-master-x86_64": {platform: Dashboard.Platform.Linux64, builder: true, architecture: Buildbot.BuildArchitecture.x86_64},
+        "haiku-master-x86": {platform: Dashboard.Platform.Linux64, builder: true, architecture: Buildbot.BuildArchitecture.x86},
+        "haiku-master-x86_gcc2": {platform: Dashboard.Platform.Linux64, builder: true, architecture: Buildbot.BuildArchitecture.x86_gcc2}
     };
 
     Buildbot.call(this, "https://buildbot.haiku-os.org/", queueInfo);
