@@ -126,7 +126,7 @@ BuildbotQueueView.prototype = {
             linkElement.className = "revision";
             linkElement.href = trac.revisionURL(commit.revisionNumber);
             linkElement.target = "_blank";
-            linkElement.textContent = "r" + commit.revisionNumber;
+            linkElement.textContent = "hrev" + commit.revisionNumber;
             result.appendChild(linkElement);
 
             var authorElement = document.createElement("span");
@@ -218,7 +218,7 @@ BuildbotQueueView.prototype = {
     _revisionPopoverContentForIteration: function(iteration, previousIteration, internal)
     {
         var content = document.createElement("span");
-        content.textContent = "r" + (internal ? iteration.internalRevision : iteration.openSourceRevision);
+        content.textContent = "hrev" + (internal ? iteration.internalRevision : iteration.openSourceRevision);
         content.classList.add("revision-number");
 
         if (previousIteration) {

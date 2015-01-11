@@ -44,7 +44,6 @@ BuildbotIteration = function(queue, dataOrID, finished)
     this._productive = false;
 
     this.openSourceRevision = null;
-    this.internalRevision = null;
 
     this.layoutTestResults = null;
     this.javascriptTestResults = null;
@@ -90,20 +89,12 @@ BuildbotIteration.Event = {
     UnauthorizedAccess: "unauthorized-access"
 };
 
-// See <http://docs.buildbot.net/0.8.8/manual/cfg-properties.html>.
-function isMultiCodebaseGotRevisionProperty(property)
-{
-    return property[0] === "got_revision" && typeof property[1] === "object";
-}
-
-function parseRevisionProperty(property, key, fallbackKey)
+function parseRevisionProperty(property)
 {
     if (!property)
         return null;
     var value = property[1];
-    if (isMultiCodebaseGotRevisionProperty(property))
-        value = (key in value) ? value[key] : value[fallbackKey];
-    return parseInt(value);
+	return parseInt(value.replace(/\D/g,''));
 }
 
 BuildbotIteration.prototype = {
@@ -252,11 +243,8 @@ BuildbotIteration.prototype = {
         // revision. Therefore, we only look at got_revision to extract the Internal revision when it's
         // a dictionary.
 
-        var openSourceRevisionProperty = data.properties.findFirst(function(property) { return property[0] === "got_revision"; });
-        this.openSourceRevision = parseRevisionProperty(openSourceRevisionProperty, "WebKit", "opensource");
-
-        var internalRevisionProperty = data.properties.findFirst(function(property) { return isMultiCodebaseGotRevisionProperty(property); });
-        this.internalRevision = parseRevisionProperty(internalRevisionProperty, "Internal", "internal");
+        var openSourceRevisionProperty = data.properties.findFirst(function(property) { return property[0] === "commit-description"; });
+        this.openSourceRevision = parseRevisionProperty(openSourceRevisionProperty);
 
         function sourceStampChanges(sourceStamp) {
             var result = [];
