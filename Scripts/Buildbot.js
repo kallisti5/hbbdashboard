@@ -57,8 +57,7 @@ Buildbot.UpdateReason = {
 
 // Ordered importance.
 Buildbot.TestCategory = {
-    Basic: "Be API Test",
-    Advanced: "Haiku API Test",
+    Basic: "API Tests",
 };
 
 // Ordered importance.

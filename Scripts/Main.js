@@ -24,6 +24,7 @@
  */
 
 var hasBubbles = typeof bubbleQueueServer != "undefined";
+var hasPerformance = typeof BuildbotPerformanceQueueView != "undefined";
 var BubblesCategory = "bubbles";
 
 var categorizedQueuesByPlatformAndBuildType = {};
@@ -84,8 +85,7 @@ if (hasBubbles) {
 }
 
 var testNames = {};
-testNames[Buildbot.TestCategory.Basic] = "Be API Tests";
-testNames[Buildbot.TestCategory.Advanced] = "Haiku API Tests";
+testNames[Buildbot.TestCategory.Basic] = "API Tests";
 
 function sortedPlatforms()
 {
@@ -150,9 +150,11 @@ function documentReady()
         row.appendChild(header);
     }
 
-    var header = document.createElement("th");
-    header.textContent = "Performance";
-    row.appendChild(header);
+    if (hasPerformance) {
+        var header = document.createElement("th");
+        header.textContent = "Performance";
+        row.appendChild(header);
+    }
 
     if (hasBubbles) {
         // Currently, EWS and commit queues are the only items in Other category.
@@ -214,13 +216,14 @@ function documentReady()
             row.appendChild(cell);
         }
 
-        var cell = document.createElement("td");
-        if (platformQueues.performance && platformQueues.performance.release) {
-            var view = new BuildbotPerformanceQueueView(platformQueues.performance.release);
-            cell.appendChild(view.element);
+        if (hasPerformance) {
+            var cell = document.createElement("td");
+            if (platformQueues.performance && platformQueues.performance.release) {
+                var view = new BuildbotPerformanceQueueView(platformQueues.performance.release);
+                cell.appendChild(view.element);
+            }
+            row.appendChild(cell);
         }
-
-        row.appendChild(cell);
 
         if (hasBubbles) {
             var cell = document.createElement("td");
