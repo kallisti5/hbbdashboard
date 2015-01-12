@@ -35,10 +35,14 @@ BuildbotBuilderQueueView = function(debugQueues, releaseQueues)
     this.x86_64ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64Target));
     this.x86ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86Target));
     this.x86_gcc2ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2Target));
+    this.ppcReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.ppcTarget));
+    this.armReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.armTarget));
 
     this.x86_64DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64Target));
     this.x86DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86Target));
     this.x86_gcc2DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2Target));
+    this.ppcDebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.ppcTarget));
+    this.armDebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.armTarget));
 
     this.hasMultipleReleaseBuilds = this.releaseQueues.length > 1;
     this.hasMultipleDebugBuilds = this.debugQueues.length > 1;
@@ -130,10 +134,14 @@ BuildbotBuilderQueueView.prototype = {
         appendBuildArchitecture.call(this, this.x86_64ReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86_64)" : "Release");
         appendBuildArchitecture.call(this, this.x86ReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86)" : "Release");
         appendBuildArchitecture.call(this, this.x86_gcc2ReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86_gcc2)" : "Release");
+        appendBuildArchitecture.call(this, this.armReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (ARM)" : "Release");
+        appendBuildArchitecture.call(this, this.ppcReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (PowerPC)" : "Release");
 
         appendBuildArchitecture.call(this, this.x86_64DebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86_64)" : "Debug");
         appendBuildArchitecture.call(this, this.x86DebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86)" : "Debug");
         appendBuildArchitecture.call(this, this.x86_gcc2DebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86_gcc2)" : "Debug");
+        appendBuildArchitecture.call(this, this.armDebugQueues, this.hasMultipleDebugBuilds ? "Debug (ARM)" : "Debug");
+        appendBuildArchitecture.call(this, this.ppcDebugQueues, this.hasMultipleDebugBuilds ? "Debug (PowerPC)" : "Debug");
     },
 
     _presentPopoverFailureLogs: function(element, popover, iteration)

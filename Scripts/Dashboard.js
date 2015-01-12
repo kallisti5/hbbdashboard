@@ -27,7 +27,9 @@ Dashboard = {
     Platform: {
         x86_gcc2: { name: "x86_gcc2", readableName: "x86_gcc2", order: 10 },
         x86_64: { name: "x86_64", readableName: "x86_64", order: 20 },
-        x86: { name: "x86", readableName: "x86", order: 30 }
+        x86: { name: "x86", readableName: "x86", order: 30 },
+        arm: { name: "arm", readableName: "arm", order: 40 },
+        ppc: { name: "ppc", readableName: "ppc", order: 50 },
     },
     Branch: {}
 };
