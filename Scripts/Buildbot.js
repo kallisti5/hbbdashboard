@@ -65,6 +65,8 @@ Buildbot.BuildArchitecture = {
     x86_gcc2Target: "x86_gcc2",
     x86_64Target: "x86_64",
     x86Target: "x86",
+    x86_gcc2_hybridTarget: "x86_gcc2_hybrid",
+    x86_hybridTarget: "x86_hybrid",
     ppcTarget: "ppc",
     armTarget: "arm"
 };

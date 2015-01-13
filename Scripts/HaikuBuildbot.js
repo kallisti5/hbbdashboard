@@ -27,10 +27,20 @@ HaikuBuildbot = function()
 {
     const queueInfo = {
         "haiku-master-x86_gcc2": {platform: Dashboard.Platform.x86_gcc2, builder: true, architecture: Buildbot.BuildArchitecture.x86_gcc2Target},
+        "haiku-master-x86_gcc2_hybrid": {platform: Dashboard.Platform.x86_gcc2, builder: true, architecture: Buildbot.BuildArchitecture.x86_gcc2_hybridTarget},
         "haiku-master-x86_64": {platform: Dashboard.Platform.x86_64, builder: true, architecture: Buildbot.BuildArchitecture.x86_64Target},
         "haiku-master-x86": {platform: Dashboard.Platform.x86, builder: true, architecture: Buildbot.BuildArchitecture.x86Target},
+        "haiku-master-x86_hybrid": {platform: Dashboard.Platform.x86, builder: true, architecture: Buildbot.BuildArchitecture.x86_hybridTarget},
         "haiku-master-ppc": {platform: Dashboard.Platform.ppc, builder: true, architecture: Buildbot.BuildArchitecture.ppcTarget},
-        "haiku-master-arm": {platform: Dashboard.Platform.arm, builder: true, architecture: Buildbot.BuildArchitecture.armTarget}
+        "haiku-master-arm": {platform: Dashboard.Platform.arm, builder: true, architecture: Buildbot.BuildArchitecture.armTarget},
+
+        "haiku-master-x86_gcc2-debug": {platform: Dashboard.Platform.x86_gcc2, builder: true, architecture: Buildbot.BuildArchitecture.x86_gcc2Target, debug: true},
+        "haiku-master-x86_gcc2_hybrid-debug": {platform: Dashboard.Platform.x86_gcc2, builder: true, architecture: Buildbot.BuildArchitecture.x86_gcc2_hybridTarget, debug: true},
+        "haiku-master-x86_64-debug": {platform: Dashboard.Platform.x86_64, builder: true, architecture: Buildbot.BuildArchitecture.x86_64Target, debug: true},
+        "haiku-master-x86-debug": {platform: Dashboard.Platform.x86, builder: true, architecture: Buildbot.BuildArchitecture.x86Target, debug: true},
+        "haiku-master-x86_hybrid-debug": {platform: Dashboard.Platform.x86, builder: true, architecture: Buildbot.BuildArchitecture.x86_hybridTarget, debug: true},
+        "haiku-master-ppc-debug": {platform: Dashboard.Platform.ppc, builder: true, architecture: Buildbot.BuildArchitecture.ppcTarget, debug: true},
+        "haiku-master-arm-debug": {platform: Dashboard.Platform.arm, builder: true, architecture: Buildbot.BuildArchitecture.armTarget, debug: true}
     };
 
     Buildbot.call(this, "https://buildbot.haiku-os.org/", queueInfo);

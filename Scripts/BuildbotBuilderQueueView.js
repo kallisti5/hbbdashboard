@@ -35,12 +35,16 @@ BuildbotBuilderQueueView = function(debugQueues, releaseQueues)
     this.x86_64ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64Target));
     this.x86ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86Target));
     this.x86_gcc2ReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2Target));
+    this.x86_hybridReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_hybridTarget));
+    this.x86_gcc2_hybridReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2_hybridTarget));
     this.ppcReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.ppcTarget));
     this.armReleaseQueues = this.releaseQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.armTarget));
 
     this.x86_64DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_64Target));
     this.x86DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86Target));
     this.x86_gcc2DebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2Target));
+    this.x86_hybridDebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_hybridTarget));
+    this.x86_gcc2_hybridDebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.x86_gcc2_hybridTarget));
     this.ppcDebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.ppcTarget));
     this.armDebugQueues = this.debugQueues.filter(filterQueuesByArchitecture.bind(this, Buildbot.BuildArchitecture.armTarget));
 
@@ -134,12 +138,16 @@ BuildbotBuilderQueueView.prototype = {
         appendBuildArchitecture.call(this, this.x86_64ReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86_64)" : "Release");
         appendBuildArchitecture.call(this, this.x86ReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86)" : "Release");
         appendBuildArchitecture.call(this, this.x86_gcc2ReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86_gcc2)" : "Release");
+        appendBuildArchitecture.call(this, this.x86_hybridReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86 Hybrid)" : "Release");
+        appendBuildArchitecture.call(this, this.x86_gcc2_hybridReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (x86_gcc2 Hybrid)" : "Release");
         appendBuildArchitecture.call(this, this.armReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (ARM)" : "Release");
         appendBuildArchitecture.call(this, this.ppcReleaseQueues, this.hasMultipleReleaseBuilds ? "Release (PowerPC)" : "Release");
 
         appendBuildArchitecture.call(this, this.x86_64DebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86_64)" : "Debug");
         appendBuildArchitecture.call(this, this.x86DebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86)" : "Debug");
         appendBuildArchitecture.call(this, this.x86_gcc2DebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86_gcc2)" : "Debug");
+        appendBuildArchitecture.call(this, this.x86_hybridDebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86 Hybrid)" : "Debug");
+        appendBuildArchitecture.call(this, this.x86_gcc2_hybridDebugQueues, this.hasMultipleDebugBuilds ? "Debug (x86_gcc2 Hybrid)" : "Debug");
         appendBuildArchitecture.call(this, this.armDebugQueues, this.hasMultipleDebugBuilds ? "Debug (ARM)" : "Debug");
         appendBuildArchitecture.call(this, this.ppcDebugQueues, this.hasMultipleDebugBuilds ? "Debug (PowerPC)" : "Debug");
     },
