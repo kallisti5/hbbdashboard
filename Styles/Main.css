@@ -131,18 +131,18 @@ table.queue-grid tr:nth-child(odd):not(.headers) td:last-child {
 }
 
 table.queue-grid td {
-    width: 200px;
+    width: 300px;
     vertical-align: top;
 }
 
 table.queue-grid td.logo {
+    width: 200px;
     position: relative;
 }
 
 table.queue-grid td.logo::before {
     display: block;
     content: "";
-    width: 200px;
     height: 0;
 }
 
